@@ -3670,6 +3670,7 @@ friendly
 friends
 friendship
 frog
+frogs
 from
 front
 frontier
@@ -5484,6 +5485,7 @@ maternity
 math
 mathematical
 mathematics
+maths
 mating
 matrix
 mats

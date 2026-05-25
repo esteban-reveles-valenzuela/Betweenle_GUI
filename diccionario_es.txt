@@ -9765,6 +9765,7 @@ ventajas
 ventana
 ventanas
 ventas
+vente
 ventilación
 veo
 ver
@@ -9772,7 +9773,6 @@ vera
 verá
 verán
 verano
-veras
 verás
 verdad
 verdadera
