@@ -683,10 +683,13 @@ public class HelloApplication extends Application
         panelMiniAlfabeto.getChildren().clear();
         ArrayList<Character> alfabeto = generarAlfabetoRonda();
         int indiceEdicion = intentoActual.length();
+
         String sup = juego.getLimiteSup();
         String inf = juego.getLimiteInf();
+
         String txtSup = (sup == null) ? "a".repeat(longitudElegida) : sup.toLowerCase();
         String txtInf = (inf == null) ? "z".repeat(longitudElegida) : inf.toLowerCase();
+
         Collator collator = Collator.getInstance(new Locale("es", "MX"));
         collator.setStrength(Collator.SECONDARY);
 
@@ -699,6 +702,7 @@ public class HelloApplication extends Application
                 String cadenaSimulada = intentoActual.toString() + Character.toLowerCase(c);
                 String subCadenaSup = txtSup.substring(0, indiceEdicion + 1);
                 String subCadenaInf = txtInf.substring(0, indiceEdicion + 1);
+
                 estaHabilitada = collator.compare(cadenaSimulada, subCadenaSup) >= 0 &&
                     collator.compare(cadenaSimulada, subCadenaInf) <= 0;
             }
