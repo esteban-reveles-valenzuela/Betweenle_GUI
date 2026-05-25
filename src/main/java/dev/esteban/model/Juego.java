@@ -297,7 +297,7 @@ public class Juego
             {
                 return idioma.equals("en") ?
                     "Starts with: " + palabraSecreta.toUpperCase().charAt(0) :
-                    "Empieza con : " + palabraSecreta.toUpperCase().charAt(0);
+                    "Empieza con: " + palabraSecreta.toUpperCase().charAt(0);
             }
 
             default:
