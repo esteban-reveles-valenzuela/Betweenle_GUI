@@ -49,6 +49,8 @@ public class Juego
     private String limiteSup;
     private String limiteInf;
 
+    private boolean pistaHecha;
+
     private Comparator<String> comparador;
 
     public Juego()
@@ -99,6 +101,7 @@ public class Juego
         gano = false;
         termino = false;
         rindio = false;
+        pistaHecha = false;
 
         indiceSup = 0;
         indiceInf = 0;
@@ -248,6 +251,13 @@ public class Juego
         if (termino)
         {
             return "La partida ya terminó.";
+        }
+
+        if (pistaHecha)
+        {
+            return idioma.equals("en") ?
+                "You've already asked for a hint" :
+                "Ya has pedido una pista.";
         }
 
         int paso = Math.max(1, (int)Math.ceil(ordenadas.size() * 0.01));
