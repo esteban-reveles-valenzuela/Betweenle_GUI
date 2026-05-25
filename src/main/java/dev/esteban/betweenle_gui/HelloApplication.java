@@ -809,6 +809,7 @@ public class HelloApplication extends Application
         if(juego.termino())
         {
             Alert fin = new Alert(Alert.AlertType.INFORMATION);
+            fin.setTitle(lang.get("fin"));
             fin.setHeaderText
             (
                 juego.gano() ?
