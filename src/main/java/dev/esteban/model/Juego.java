@@ -277,7 +277,7 @@ public class Juego
                 int pos = Math.min(actual + paso, indiceSecreta - 1);
 
                 limiteSup = ordenadas.get(pos);
-
+                pistaHecha = true;
                 return idioma.equals("en") ?
                     "Upper limit moved to: " + limiteSup :
                     "Límite superior movido a: " + limiteSup;
@@ -297,7 +297,7 @@ public class Juego
                 int pos = Math.max(actual - paso, indiceSecreta + 1);
 
                 limiteInf = ordenadas.get(pos);
-
+                pistaHecha = true;
                 return idioma.equals("en") ?
                     "Lower limit moved to: " + limiteInf :
                     "Límite inferior movido a: " + limiteInf;
@@ -305,6 +305,7 @@ public class Juego
 
             case 3:
             {
+                pistaHecha = true;
                 return idioma.equals("en") ?
                     "Starts with: " + palabraSecreta.toUpperCase().charAt(0) :
                     "Empieza con: " + palabraSecreta.toUpperCase().charAt(0);
