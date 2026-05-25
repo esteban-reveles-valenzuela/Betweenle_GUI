@@ -117,11 +117,11 @@ public class HelloApplication extends Application
 
         Label lblTitulo = new Label("BETWEENLE");
         lblTitulo.setFont(Font.font("Arial", FontWeight.BOLD, 38));
-        lblTitulo.setTextFill(Color.web("#000000"));
+        lblTitulo.setTextFill(Color.rgb(0, 0, 0));
 
         Label lblIdioma = new Label("Idioma / Language");
         lblIdioma.setFont(Font.font("Arial", FontWeight.NORMAL, 16));
-        lblIdioma.setTextFill(Color.web("#555555"));
+        lblIdioma.setTextFill(Color.rgb(85, 85, 85));
 
         VBox boxBotones = new VBox(12);
         boxBotones.setAlignment(Pos.CENTER);
@@ -187,7 +187,7 @@ public class HelloApplication extends Application
 
         Label lblTitulo = new Label("BETWEENLE");
         lblTitulo.setFont(Font.font("Arial", FontWeight.BOLD, 36));
-        lblTitulo.setTextFill(Color.web("#000000"));
+        lblTitulo.setTextFill(Color.rgb(0, 0, 0));
 
         longitudElegida = 5;
         intentosElegidos = 10;
@@ -455,13 +455,13 @@ public class HelloApplication extends Application
 
         lblPorcentajeSup = new Label("0");
         lblPorcentajeSup.setFont(Font.font("Arial", FontWeight.BOLD, 14));
-        lblPorcentajeSup.setTextFill(Color.WHITE);
+        lblPorcentajeSup.setTextFill(Color.rgb(255, 255, 255));
         lblPorcentajeSup.setAlignment(Pos.CENTER);
         lblPorcentajeSup.setPrefSize(40, 30);
         lblPorcentajeSup.setStyle("-fx-background-color: #00a2e8; -fx-background-radius: 5;");
 
         Rectangle linea = new Rectangle(4,75);
-        linea.setFill(Color.web("#00a2e8"));
+        linea.setFill(Color.rgb(0, 162, 232));
 
         StackPane contenedor = new StackPane();
         contenedor.setAlignment(Pos.TOP_CENTER);
@@ -469,7 +469,7 @@ public class HelloApplication extends Application
 
         lblPorcentajeInf = new Label("100");
         lblPorcentajeInf.setFont(Font.font("Arial", FontWeight.BOLD, 14));
-        lblPorcentajeInf.setTextFill(Color.WHITE);
+        lblPorcentajeInf.setTextFill(Color.rgb(255, 255, 255));
         lblPorcentajeInf.setAlignment(Pos.CENTER);
         lblPorcentajeInf.setPrefSize(40, 30);
         lblPorcentajeInf.setStyle("-fx-background-color: #00a2e8; -fx-background-radius: 5;");
@@ -894,7 +894,7 @@ public class HelloApplication extends Application
         if(historial.isEmpty())
         {
             Label vacio = new Label(lang.get("sin_intentos"));
-            vacio.setTextFill(Color.GRAY);
+            vacio.setTextFill(Color.rgb(128, 128, 128));
             panelHistorial.getChildren().add(vacio);
             return;
         }
