@@ -56,6 +56,7 @@ abuelo
 abuelos
 aburrida
 aburrido
+abusadores
 abuso
 aca
 acá
@@ -1196,6 +1197,7 @@ bromeo
 bruja
 brujas
 brutal
+brutalizar
 bruto
 buen
 buena
@@ -2321,6 +2323,7 @@ crío
 crisis
 cristal
 cristales
+cristalino
 cristiana
 cristiano
 cristianos
@@ -4107,6 +4110,7 @@ feria
 feroz
 ferrocarril
 festival
+fetos
 fianza
 fibra
 ficción
@@ -4200,6 +4204,7 @@ fotos
 fracasado
 fracaso
 fractura
+fracturado
 frágil
 fragmentos
 francamente
@@ -4379,6 +4384,7 @@ gira
 girando
 girar
 giro
+glifo
 global
 globo
 globos
@@ -5281,10 +5287,12 @@ ladra
 ladrón
 ladrones
 lago
+lagos
 lágrimas
 lamentable
 lamentablemente
 lamento
+lamer
 lámpara
 lana
 lance
@@ -5459,6 +5467,7 @@ listo
 listos
 literalmente
 literatura
+litio
 litro
 litros
 llama
@@ -5597,6 +5606,7 @@ locuras
 lodo
 lógica
 lógico
+logos
 logra
 logrado
 logramos
@@ -8823,6 +8833,7 @@ socio
 socios
 socorro
 soda
+sodio
 sofá
 software
 soga
