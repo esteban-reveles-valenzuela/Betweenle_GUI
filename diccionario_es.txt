@@ -5692,6 +5692,7 @@ maletas
 maletero
 maletín
 maligno
+malla
 malo
 malos
 malvada
@@ -5699,6 +5700,7 @@ malvado
 malvados
 mama
 mamá
+mamás
 mami
 mamita
 manada
@@ -5727,6 +5729,7 @@ manejo
 manera
 maneras
 manga
+mango
 manguera
 maní
 manicomio
@@ -5735,6 +5738,7 @@ maniobras
 mano
 manos
 mansión
+manso
 manta
 mantén
 mantendrá
