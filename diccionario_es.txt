@@ -4670,6 +4670,7 @@ helados
 helena
 helicóptero
 helicópteros
+helio
 helion
 hembra
 hemorragia
@@ -4717,6 +4718,7 @@ hijita
 hijo
 hijos
 hilo
+hilos
 hipoteca
 hirieron
 hirió
@@ -4812,6 +4814,7 @@ humo
 humor
 huracán
 hurra
+hurta
 huye
 huyendo
 huyó
@@ -5274,6 +5277,7 @@ laboratorio
 laboratorios
 lado
 lados
+ladra
 ladrón
 ladrones
 lago
@@ -8583,6 +8587,7 @@ selva
 semana
 semanas
 semejante
+semen
 semental
 semestre
 semilla
@@ -9355,6 +9360,7 @@ tontería
 tonterías
 tonto
 tontos
+topar
 tope
 toque
 toqué
@@ -9529,6 +9535,7 @@ tubos
 tumba
 tumbas
 tumor
+tunas
 túnel
 túneles
 turbulencia
@@ -9587,7 +9594,6 @@ unidos
 uniforme
 uniformes
 unió
-union
 unión
 unir
 unirse
