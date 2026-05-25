@@ -681,7 +681,7 @@ public class HelloApplication extends Application
     private void actualizarAlfabeto()
     {
         panelMiniAlfabeto.getChildren().clear();
-        List<Character> alfabeto = generarAlfabetoRonda();
+        ArrayList<Character> alfabeto = generarAlfabetoRonda();
         int indiceEdicion = intentoActual.length();
         String sup = juego.getLimiteSup();
         String inf = juego.getLimiteInf();
@@ -728,9 +728,9 @@ public class HelloApplication extends Application
         }
     }
 
-    private List<Character> generarAlfabetoRonda()
+    private ArrayList<Character> generarAlfabetoRonda()
     {
-        List<Character> lista = new ArrayList<>();
+        ArrayList<Character> lista = new ArrayList<>();
         for (char c = 'a'; c <= 'z'; c ++)
         {
             lista.add(c);
