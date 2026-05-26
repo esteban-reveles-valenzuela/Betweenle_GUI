@@ -56,6 +56,7 @@ public class HelloApplication extends Application
     private HashMap<String, String> lang;
 
     private boolean juegoTerminado = false;
+    private boolean esperandoAcento = false;
 
     @Override
     public void init()
@@ -307,7 +308,7 @@ public class HelloApplication extends Application
         });
 
         boxInt.getChildren().addAll(btn10, btn12, btn14);
-        Button btnJugar = new ImageButton("", "/jugar.png");
+        Button btnJugar = new ImageButton("", "/jugar2.png");
 
         btnJugar.setStyle
         (
@@ -392,7 +393,7 @@ public class HelloApplication extends Application
         HBox barraSuperior = new HBox();
         barraSuperior.setAlignment(Pos.CENTER);
 
-        Button btnSalir = new ImageButton("", "/casa.png");
+        Button btnSalir = new ImageButton("", "/casa2.png");
 
         btnSalir.setStyle
         (
@@ -408,7 +409,7 @@ public class HelloApplication extends Application
             mostrarPantallaIdioma();
         });
 
-        Button btnPista = new ImageButton("", "/foco.png");
+        Button btnPista = new ImageButton("", "/foco2.png");
 
         btnPista.setStyle
         (
@@ -525,8 +526,9 @@ public class HelloApplication extends Application
 
         lblLetrasUsadas = new Label();
         lblLetrasUsadas.setFont(Font.font("Arial", FontWeight.BOLD, 13));
+        lblLetrasUsadas.setAlignment(Pos.CENTER);
         lblLetrasUsadas.setWrapText(true);
-        lblLetrasUsadas.setMaxWidth(300);
+        lblLetrasUsadas.setMaxWidth(500);
 
         panelTeclado = new GridPane();
         panelTeclado.setAlignment(Pos.CENTER);
@@ -565,13 +567,33 @@ public class HelloApplication extends Application
                 borrarCaracterAnterior();
                 reproducirSonido();
             }
+            else if(e.getCode() == KeyCode.DEAD_ACUTE && idiomaElegido.equals("es"))
+            {
+                esperandoAcento = true;
+                reproducirSonido();
+                return;
+            }
             else
             {
                 String txt = e.getText().toLowerCase();
 
-                if(txt.length()==1)
+                if(txt.length() == 1)
                 {
                     char c = txt.charAt(0);
+
+                    if(esperandoAcento)
+                    {
+                        switch(c)
+                        {
+                            case 'a': c='á'; break;
+                            case 'e': c='é'; break;
+                            case 'i': c='í'; break;
+                            case 'o': c='ó'; break;
+                            case 'u': c='ú'; break;
+                        }
+
+                        esperandoAcento = false;
+                    }
 
                     if ((c >= 'a' && c <= 'z') || (c == 'ñ' && idiomaElegido.equals("es")) ||
                         ("áéíóú".indexOf(c) != -1 && idiomaElegido.equals("es")))
