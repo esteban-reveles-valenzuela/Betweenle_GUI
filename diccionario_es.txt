@@ -5432,6 +5432,7 @@ líderes
 lidiar
 liego
 liga
+ligar
 ligera
 ligero
 lila
