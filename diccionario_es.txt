@@ -1584,6 +1584,7 @@ cerramos
 cerrando
 cerrar
 cerré
+cerro
 cerró
 certeza
 certificado
@@ -2592,6 +2593,7 @@ declarado
 declarar
 declaro
 declaró
+dedal
 dedica
 dedicado
 dedicas
@@ -8893,6 +8895,7 @@ soñando
 soñar
 soñé
 sopa
+sopas
 sopla
 soplón
 soporta
