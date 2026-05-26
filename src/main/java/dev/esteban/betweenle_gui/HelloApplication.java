@@ -23,6 +23,7 @@ import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.text.Collator;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class HelloApplication extends Application
 {
@@ -927,6 +928,15 @@ public class HelloApplication extends Application
             return;
         }
 
+        Collator col = Collator.getInstance(new Locale("es", "MX"));
+        col.setStrength(Collator.SECONDARY);
+        Comparator comparador = (a, b) -> col.compare(a.toString(), b.toString());
+
+        ArrayList<Character> ordenadas = (ArrayList) usadas
+            .stream()
+            .sorted(comparador)
+            .collect(Collectors.toCollection(ArrayList :: new));
+
         StringBuilder txt = new StringBuilder();
 
         txt.append
@@ -936,7 +946,7 @@ public class HelloApplication extends Application
                 "Used letters: "
         );
 
-        for(char c : usadas)
+        for(char c : ordenadas)
         {
             txt.append(Character.toUpperCase(c));
             txt.append(" ");
