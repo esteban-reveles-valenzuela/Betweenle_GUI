@@ -28,16 +28,28 @@ public class HelloApplication extends Application
 {
     private Juego juego;
     private Stage stage;
+
     private String idiomaElegido = "es";
+
     private int longitudElegida = 5;
     private int intentosElegidos = 10;
+
     private StringBuilder intentoActual = new StringBuilder();
+
     private Label lblIntentos;
-    private Label lblPorcentajeSup, lblPorcentajeInf;
-    private HBox rowLimiteSup, rowIntentoActual, rowLimiteInf;
+    private Label lblPorcentajeSup;
+    private Label lblPorcentajeInf;
+
+    private HBox rowLimiteSup;
+    private HBox rowIntentoActual;
+    private HBox rowLimiteInf;
+
+    private Label lblLetrasUsadas;
     private HBox panelMiniAlfabeto;
     private VBox panelHistorial;
+
     private GridPane panelTeclado;
+
     private HashMap<String, String> textosEs = new HashMap<>();
     private HashMap<String, String> textosEn = new HashMap<>();
     private HashMap<String, String> lang;
@@ -159,7 +171,7 @@ public class HelloApplication extends Application
         boxBotones.getChildren().addAll(btnEs, btnEn);
         root.getChildren().addAll(lblTitulo, lblIdioma, boxBotones);
 
-        Scene scene = new Scene(root, 700, 700);
+        Scene scene = new Scene(root, 900, 750);
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
@@ -359,7 +371,7 @@ public class HelloApplication extends Application
             btnJugar
         );
 
-        Scene scene = new Scene(root, 700, 700);
+        Scene scene = new Scene(root, 900, 750);
         stage.setResizable(false);
         stage.setScene(scene);
     }
@@ -507,6 +519,11 @@ public class HelloApplication extends Application
         historialScroll.setMaxWidth(300);
         historialScroll.setPrefHeight(140);
 
+        lblLetrasUsadas = new Label();
+        lblLetrasUsadas.setFont(Font.font("Arial", FontWeight.BOLD, 13));
+        lblLetrasUsadas.setWrapText(true);
+        lblLetrasUsadas.setMaxWidth(300);
+
         panelTeclado = new GridPane();
         panelTeclado.setAlignment(Pos.CENTER);
         panelTeclado.setHgap(6);
@@ -520,15 +537,17 @@ public class HelloApplication extends Application
             tableroCentral,
             panelMiniAlfabeto,
             historialScroll,
+            lblLetrasUsadas,
             panelTeclado
         );
 
         actualizarTableroEstructural();
         actualizarAlfabeto();
         actualizarHistorial();
+        actualizarLetrasUsadas();
         armarTecladoVirtual();
 
-        Scene scene = new Scene(root,700,700);
+        Scene scene = new Scene(root, 900, 750);
 
         scene.setOnKeyPressed(e ->
         {
@@ -792,6 +811,7 @@ public class HelloApplication extends Application
                 intentoActual.setLength(0);
                 actualizarTableroEstructural();
                 actualizarAlfabeto();
+                actualizarLetrasUsadas();
                 return;
             }
         }
@@ -834,6 +854,7 @@ public class HelloApplication extends Application
             intentoActual.setLength(0);
             actualizarTableroEstructural();
             actualizarAlfabeto();
+            actualizarLetrasUsadas();
         }
     }
 
@@ -888,6 +909,40 @@ public class HelloApplication extends Application
                 panelTeclado.add(btnTeclado, colPos, fil);
             }
         }
+    }
+
+    private void actualizarLetrasUsadas()
+    {
+        HashSet<Character> usadas = juego.getLetrasUsadas();
+
+        if(usadas.isEmpty())
+        {
+            lblLetrasUsadas.setText
+            (
+                idiomaElegido.equals("es") ?
+                    "Letras usadas: Ninguna" :
+                    "Used letters: None"
+            );
+
+            return;
+        }
+
+        StringBuilder txt = new StringBuilder();
+
+        txt.append
+        (
+            idiomaElegido.equals("es") ?
+                "Letras usadas: " :
+                "Used letters: "
+        );
+
+        for(char c : usadas)
+        {
+            txt.append(Character.toUpperCase(c));
+            txt.append(" ");
+        }
+
+        lblLetrasUsadas.setText(txt.toString());
     }
 
     private void actualizarHistorial()
