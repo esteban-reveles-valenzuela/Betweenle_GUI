@@ -55,6 +55,8 @@ public class HelloApplication extends Application
     private HashMap<String, String> textosEn = new HashMap<>();
     private HashMap<String, String> lang;
 
+    private boolean juegoTerminado = false;
+
     @Override
     public void init()
     {
@@ -379,6 +381,7 @@ public class HelloApplication extends Application
 
     private void mostrarPantallaJuego()
     {
+        juegoTerminado = false;
         intentoActual.setLength(0);
 
         VBox root = new VBox(15);
@@ -768,6 +771,11 @@ public class HelloApplication extends Application
 
     private void recibirLetraTeclado(char letra)
     {
+        if(juegoTerminado)
+        {
+            return;
+        }
+
         if (intentoActual.length() < longitudElegida)
         {
             intentoActual.append(Character.toLowerCase(letra));
@@ -778,6 +786,11 @@ public class HelloApplication extends Application
 
     private void borrarCaracterAnterior()
     {
+        if(juegoTerminado)
+        {
+            return;
+        }
+
         if (intentoActual.length() > 0)
         {
             intentoActual.setLength(intentoActual.length() - 1);
@@ -788,7 +801,7 @@ public class HelloApplication extends Application
 
     private void validarYEnviarIntento()
     {
-        if(intentoActual.length() != longitudElegida)
+        if(intentoActual.length() != longitudElegida || juegoTerminado)
         {
             return;
         }
@@ -833,13 +846,15 @@ public class HelloApplication extends Application
         actualizarHistorial();
         if(juego.termino())
         {
+            juegoTerminado = true;
             Alert fin = new Alert(Alert.AlertType.INFORMATION);
             fin.setTitle(lang.get("fin"));
+
             fin.setHeaderText
             (
                 juego.gano() ?
-                lang.get("ganaste") :
-                lang.get("perdiste")
+                    lang.get("ganaste") :
+                    lang.get("perdiste")
             );
 
             fin.setContentText
@@ -848,7 +863,7 @@ public class HelloApplication extends Application
             );
 
             fin.showAndWait();
-            mostrarPantallaIdioma();
+            return;
         }
         else
         {
@@ -986,6 +1001,11 @@ public class HelloApplication extends Application
 
     private void mostrarMenuPistas()
     {
+        if(juegoTerminado)
+        {
+            return;
+        }
+
         String title = lang.get("pistas");
         String op1 = lang.get("pista1");
         String op2 = lang.get("pista2");
