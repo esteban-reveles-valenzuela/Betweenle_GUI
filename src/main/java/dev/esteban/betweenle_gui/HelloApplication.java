@@ -479,9 +479,9 @@ public class HelloApplication extends Application
                     rendido.setHeaderText(lang.get("rendido"));
 
                     rendido.setContentText
-                            (
-                                    lang.get("secreta_era") + juego.getPalabraSecreta().toUpperCase()
-                            );
+                    (
+                        lang.get("secreta_era") + juego.getPalabraSecreta().toUpperCase()
+                    );
 
                     rendido.showAndWait();
                 }
@@ -939,6 +939,11 @@ public class HelloApplication extends Application
 
         if(juego.termino())
         {
+            if (!juego.gano())
+            {
+                intentoActual.setLength(0);
+            }
+
             actualizarTableroEstructural();
             juegoTerminado = true;
             Alert fin = new Alert(Alert.AlertType.INFORMATION);
