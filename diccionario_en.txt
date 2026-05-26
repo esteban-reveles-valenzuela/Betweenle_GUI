@@ -6501,6 +6501,7 @@ pe
 peace
 peaceful
 peak
+peaks
 pearl
 peas
 pediatric
@@ -6550,6 +6551,7 @@ periodically
 periods
 peripheral
 peripherals
+perks
 perl
 permalink
 permanent
@@ -8322,6 +8324,7 @@ sound
 sounds
 soundtrack
 soup
+soups
 source
 sources
 south

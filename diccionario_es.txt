@@ -1446,6 +1446,7 @@ carbón
 carcel
 cárcel
 cardíaco
+cardiovasculares
 carga
 cargada
 cargado
@@ -1537,6 +1538,7 @@ cazar
 cazas
 cd
 cebolla
+cejas
 celda
 celdas
 celebración
@@ -1559,6 +1561,7 @@ centavos
 centímetros
 central
 centro
+centroamericanos
 centros
 cepillo
 cera
@@ -2066,6 +2069,7 @@ conspiración
 constante
 constantemente
 constitución
+constitucionales
 construcción
 construida
 construido
@@ -2202,6 +2206,7 @@ correos
 correr
 corres
 corresponde
+correspondientes
 corrí
 corría
 corriendo
@@ -2387,6 +2392,7 @@ cúbranse
 cubre
 cubriendo
 cubrir
+cubro
 cucaracha
 cuchillo
 cuchillos
@@ -2415,6 +2421,7 @@ cuesta
 cuestan
 cueste
 cuestión
+cuestionamientos
 cuestiones
 cueva
 cuevas
@@ -3729,6 +3736,7 @@ especialista
 especialmente
 especie
 especies
+especificaciones
 específicamente
 específico
 espectacular
@@ -3792,6 +3800,7 @@ estabas
 estable
 establecer
 establecido
+establecimientos
 establo
 estaca
 estación
@@ -5336,6 +5345,7 @@ lata
 latas
 late
 latín
+latinoamericanos
 lava
 lavado
 lavandería
