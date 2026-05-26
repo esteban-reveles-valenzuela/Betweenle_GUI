@@ -2677,6 +2677,7 @@ del
 delante
 delantera
 dele
+delfín
 delgada
 delgado
 delicada
@@ -3775,6 +3776,7 @@ espérenme
 esperes
 espero
 esperó
+espeso
 espía
 espiando
 espías
@@ -3858,6 +3860,7 @@ estes
 estés
 estilo
 estimado
+estira
 estirar
 esto
 ésto
@@ -5311,6 +5314,7 @@ lamentable
 lamentablemente
 lamento
 lamer
+lámina
 lámpara
 lana
 lance
@@ -6643,6 +6647,7 @@ oiste
 oíste
 ojala
 ojalá
+ojera
 ojo
 ojos
 ok
@@ -6836,6 +6841,7 @@ pantalón
 pantalones
 pantano
 panza
+pañal
 pañales
 pañuelo
 papa
