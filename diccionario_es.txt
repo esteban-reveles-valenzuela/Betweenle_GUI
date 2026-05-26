@@ -1290,6 +1290,7 @@ cajero
 cajón
 cal
 calabozo
+calca
 calcetines
 cálculo
 cálculos
@@ -8978,6 +8979,7 @@ subterráneo
 subtitulado
 subtitulos
 subtítulos
+suburbio
 suburbios
 succión
 suceda
@@ -9739,6 +9741,7 @@ varias
 varios
 varón
 vas
+vasco
 vaso
 vasos
 vaticano
