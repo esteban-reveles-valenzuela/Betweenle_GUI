@@ -4104,6 +4104,7 @@ felicito
 feliz
 femenina
 femenino
+fémur
 fenomenal
 fenómeno
 fenómenos
@@ -4355,6 +4356,7 @@ gelatina
 gemela
 gemelas
 gemelos
+gemir
 gen
 generación
 generaciones
@@ -4727,6 +4729,7 @@ hijo
 hijos
 hilo
 hilos
+himno
 hipoteca
 hirieron
 hirió
@@ -4759,6 +4762,7 @@ honestamente
 honestidad
 honesto
 honestos
+hongo
 hongos
 honor
 honorable
