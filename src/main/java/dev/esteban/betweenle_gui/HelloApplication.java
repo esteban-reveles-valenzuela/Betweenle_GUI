@@ -86,7 +86,9 @@ public class HelloApplication extends Application
         textosEs.put("error_dicc", "No existen palabras con esa longitud en el diccionario actual.");
         textosEs.put("ganaste", "¡Ganaste!");
         textosEs.put("perdiste", "Perdiste. Se agotaron los intentos.");
-        textosEs.put("rendirse", "Te has rendido.");
+        textosEs.put("rendirse", "Rendirse");
+        textosEs.put("conf_rendirse", "¿Seguro que te quieres rendir?");
+        textosEs.put("rendido", "Te has rendido.");
         textosEs.put("secreta_era", "La palabra secreta era: ");
         textosEs.put("msg_agregar", "Esa palabra no está en el diccionario. ¿Quieres agregarla?");
         textosEs.put("intento", "INTENTO");
@@ -110,7 +112,9 @@ public class HelloApplication extends Application
         textosEn.put("error_dicc", "There are no words with that length in the current dictionary.");
         textosEn.put("ganaste", "You Won!");
         textosEn.put("perdiste", "You Lost. No attempts left.");
-        textosEn.put("rendirse", "You gave up.");
+        textosEn.put("rendirse", "Give up");
+        textosEn.put("conf_rendirse", "Are you sure you want to give up?");
+        textosEn.put("rendido", "You gave up.");
         textosEn.put("secreta_era", "The secret word was: ");
         textosEn.put("msg_agregar", "That word is not in the dictionary. Do you want to add it?");
         textosEn.put("intento", "GUESS");
@@ -444,12 +448,52 @@ public class HelloApplication extends Application
         lblTituloJuego.setAlignment(Pos.CENTER);
 
         HBox.setHgrow(lblTituloJuego, Priority.ALWAYS);
+        Button btnRendirse = new ImageButton("", "/rendirse.png");
+
+        btnRendirse.setStyle
+        (
+            "-fx-border-radius: 30;" +
+            "-fx-background-color: #F57C00;" +
+            "-fx-cursor: hand;"
+        );
+
+        btnRendirse.setFocusTraversable(false);
+
+        btnRendirse.setOnAction( e ->
+        {
+            if(!juegoTerminado)
+            {
+                Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
+                confirmacion.setTitle(lang.get("rendirse"));
+                confirmacion.setHeaderText(null);
+                confirmacion.setContentText(lang.get("conf_rendirse"));
+                Optional<ButtonType> opc = confirmacion.showAndWait();
+
+                if (opc.isPresent() && opc.get() == ButtonType.OK)
+                {
+                    juego.rendirse();
+                    juegoTerminado = true;
+
+                    Alert rendido = new Alert(Alert.AlertType.INFORMATION);
+                    rendido.setTitle(lang.get("fin"));
+                    rendido.setHeaderText(lang.get("rendido"));
+
+                    rendido.setContentText
+                            (
+                                    lang.get("secreta_era") + juego.getPalabraSecreta().toUpperCase()
+                            );
+
+                    rendido.showAndWait();
+                }
+            }
+        });
 
         barraSuperior.getChildren().addAll
         (
             btnSalir,
             lblTituloJuego,
-            btnPista
+            btnPista,
+            btnRendirse
         );
 
         Separator divisor = new Separator();
