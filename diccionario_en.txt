@@ -2851,6 +2851,7 @@ easter
 eastern
 easy
 eat
+eater
 eating
 eau
 ebay
@@ -4529,6 +4530,7 @@ injuries
 injury
 ink
 inkjet
+inlet
 inline
 inn
 inner
@@ -4926,6 +4928,7 @@ kitty
 klein
 km
 knee
+kneel
 knew
 knife
 knight
@@ -4933,6 +4936,7 @@ knights
 knit
 knitting
 knives
+knobs
 knock
 know
 knowing
@@ -5573,6 +5577,7 @@ mental
 mention
 mentioned
 mentor
+ments
 menu
 menus
 mercedes
@@ -6777,6 +6782,7 @@ pontiac
 pool
 pools
 poor
+poors
 pop
 pope
 popular

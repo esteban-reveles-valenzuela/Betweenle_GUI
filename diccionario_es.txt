@@ -1145,6 +1145,7 @@ bonitos
 bonos
 borde
 bordo
+borra
 borracha
 borracho
 borrachos
@@ -1687,6 +1688,7 @@ cirugía
 cirujano
 cirujanos
 cita
+citar
 citas
 ciudad
 ciudadano
@@ -2464,6 +2466,7 @@ cumplir
 cumplo
 cuna
 cuñado
+cupón
 cura
 curado
 curar
@@ -8072,6 +8075,7 @@ regalo
 regaló
 regalos
 regan
+regar
 régimen
 regimiento
 región
@@ -8370,6 +8374,7 @@ roto
 rotos
 rubia
 rubio
+rubor
 rudo
 rueda
 ruedas
@@ -9112,6 +9117,7 @@ tales
 talla
 taller
 talvez
+tamal
 tamaño
 tambien
 también
@@ -9296,6 +9302,7 @@ tierras
 tigre
 tigres
 tijeras
+tilde
 timbre
 times
 tímida
