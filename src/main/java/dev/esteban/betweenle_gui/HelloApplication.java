@@ -912,6 +912,7 @@ public class HelloApplication extends Application
                 lang.get("secreta_era") + juego.getPalabraSecreta().toUpperCase()
             );
 
+            lblIntentos.setText((juego.getIntentosHechos()) + " / " + intentosElegidos);
             fin.showAndWait();
             return;
         }
