@@ -125,9 +125,9 @@ public class Juego
         comparador = (a, b) -> col.compare(a, b);
 
         ordenadas = diccActual.keySet().stream()
-                .filter(palabra -> palabra.length() == this.longitud)
-                .sorted(comparador)
-                .collect(Collectors.toCollection(ArrayList::new));
+            .filter(palabra -> palabra.length() == this.longitud)
+            .sorted(comparador)
+            .collect(Collectors.toCollection(ArrayList::new));
 
         if (ordenadas.isEmpty())
         {

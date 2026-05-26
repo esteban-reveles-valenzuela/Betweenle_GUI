@@ -336,7 +336,14 @@ public class HelloApplication extends Application
                     try
                     {
                         int valor = Integer.parseInt(result.get().trim());
-                        if (valor >= 7) longitudElegida = valor; else return;
+                        if (valor >= 7)
+                        {
+                            longitudElegida = valor;
+                        }
+                        else
+                        {
+                            return;
+                        }
                     }
                     catch (NumberFormatException ex)
                     {
@@ -348,6 +355,7 @@ public class HelloApplication extends Application
                     return;
                 }
             }
+
             if (juego.configurar(idiomaElegido, longitudElegida, intentosElegidos))
             {
                 mostrarPantallaJuego();
@@ -613,10 +621,13 @@ public class HelloApplication extends Application
         rowLimiteSup.getChildren().clear();
         rowIntentoActual.getChildren().clear();
         rowLimiteInf.getChildren().clear();
+
         String sup = juego.getLimiteSup();
         String inf = juego.getLimiteInf();
+
         String defaultSup = "a".repeat(longitudElegida);
         String defaultInf = "z".repeat(longitudElegida);
+
         boolean mostrarPorcentajes = (sup != null || inf != null);
         String txtSup = (sup == null) ? defaultSup : sup;
         String txtInf = (inf == null) ? defaultInf : inf;
@@ -646,7 +657,10 @@ public class HelloApplication extends Application
         for (int i = 0; i < longitudElegida; i ++)
         {
             rowLimiteSup.getChildren().add
-            (crearCasillaLetra(String.valueOf(txtSup.charAt(i)).toUpperCase(), "#00a2e8", true));
+            (
+                crearCasillaLetra(String.valueOf(txtSup.charAt(i)).toUpperCase(), true)
+            );
+
             String caracterFila = "";
 
             if (i < intentoActual.length())
@@ -660,32 +674,32 @@ public class HelloApplication extends Application
 
             rowIntentoActual.getChildren().add
             (
-                crearCasillaLetra(caracterFila, "#ffffff", false)
+                crearCasillaLetra(caracterFila, false)
             );
 
             rowLimiteInf.getChildren().add
             (
-                crearCasillaLetra(String.valueOf(txtInf.charAt(i)).toUpperCase(), "#00a2e8", true)
+                crearCasillaLetra(String.valueOf(txtInf.charAt(i)).toUpperCase(), true)
             );
         }
 
         lblIntentos.setText((juego.getIntentosHechos() + 1) + " / " + intentosElegidos);
     }
 
-    private Label crearCasillaLetra(String letra, String colorFondo, boolean esLimite)
+    private Label crearCasillaLetra(String letra, boolean esLimite)
     {
         Label lbl = new Label(letra.isEmpty() ? " " : letra);
         lbl.setFont(Font.font("Arial", FontWeight.BOLD, 22));
         lbl.setAlignment(Pos.CENTER);
         lbl.setPrefSize(46, 46);
+
         if (esLimite)
         {
             lbl.setStyle
             (
-                "-fx-background-color: " + colorFondo + ";" +
-                "-fx-text-fill: white;" +
-                "-fx-border-color: #ffffff;" +
-                "-fx-border-width: 0.5;"
+                "-fx-background-color: #03A9F4;" +
+                "-fx-text-fill: #FFFFFF;" +
+                "-fx-border-width: 0;"
             );
         }
         else
@@ -694,29 +708,41 @@ public class HelloApplication extends Application
             {
                 lbl.setStyle
                 (
-                    "-fx-background-color: #e0e0e0;" +
-                    "-fx-text-fill: #666666;" +
-                    "-fx-border-color: #aaaaaa;" +
+                    "-fx-background-color: #EEEEEE;" +
+                    "-fx-text-fill: #555555;" +
+                    "-fx-border-color: #555555;" +
                     "-fx-border-width: 1.5;"
                 );
             }
             else if (!letra.trim().isEmpty())
             {
-                lbl.setStyle
-                (
-                    "-fx-background-color: #ffffff;" +
-                    "-fx-text-fill: #000000;" +
-                    "-fx-border-color: #444444;" +
-                    "-fx-border-width: 1.5;"
-                );
+                if (juego.gano())
+                {
+                    lbl.setStyle
+                    (
+                        "-fx-background-color: #388E3C;" +
+                        "-fx-text-fill: #FFFFFF;" +
+                        "-fx-border-width: 0;"
+                    );
+                }
+                else
+                {
+                    lbl.setStyle
+                    (
+                        "-fx-background-color: #F57C00;" +
+                        "-fx-text-fill: #FFFFFF;" +
+                        "-fx-border-width: 0;"
+                    );
+                }
+
             }
             else
             {
                 lbl.setStyle
                 (
-                    "-fx-background-color: #f8f8f8;" +
-                    "-fx-border-color: #cccccc;" +
-                    "-fx-border-width: 1;"
+                    "-fx-background-color: #EEEEEE;" +
+                    "-fx-border-color: #555555;" +
+                    "-fx-border-width: 1.5;"
                 );
             }
         }
@@ -866,8 +892,10 @@ public class HelloApplication extends Application
         }
 
         actualizarHistorial();
+
         if(juego.termino())
         {
+            actualizarTableroEstructural();
             juegoTerminado = true;
             Alert fin = new Alert(Alert.AlertType.INFORMATION);
             fin.setTitle(lang.get("fin"));
