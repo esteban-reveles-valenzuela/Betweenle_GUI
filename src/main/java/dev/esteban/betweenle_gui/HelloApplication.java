@@ -810,7 +810,7 @@ public class HelloApplication extends Application
 
         for (char c : alfabeto)
         {
-            boolean estaHabilitada = true;
+            boolean estaHabilitada = false;
 
             if (indiceEdicion < longitudElegida)
             {
